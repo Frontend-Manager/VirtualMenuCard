@@ -1,0 +1,222 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #070707;
+    overflow: hidden;
+}
+
+/* Menu Book Container */
+#menu-book {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: hidden;
+    height: 100vh;
+    scroll-snap-type: x mandatory;
+    transition: all 0.1s ease-in-out;
+    
+}
+
+/* Page Layout */
+.page {
+    flex: 0 0 100vw;
+    height: 100vh;
+    padding: 30px;
+    box-sizing: border-box;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow:hidden;
+    border-radius: 0px;
+    margin: 10px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    
+
+}
+
+/* Background Gradients for Pages */
+.page:nth-child(odd) {
+    background: linear-gradient(135deg, #4C2E1F , #F2E0C9); /* Blue gradient for odd pages */
+}
+
+.page:nth-child(even) {
+    background: linear-gradient(135deg, #4C2E1F , #F2E0C9 ); /* Orange gradient for even pages */
+}
+
+/* Enhanced Header and Text */
+ h2 {
+    color: #fff;
+    font-size: 3rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3); /* Strong shadow for header */
+}
+
+h1 {
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    color: #f1f1f1;
+}
+
+/* Swipe Right Styling */
+h3 {
+    font-size: 1.2em;
+    margin-top: 50px;
+    opacity: 0.8;
+    letter-spacing: 1px;
+    animation: bounce 1.5s infinite;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+}
+
+
+p {
+    color: #f1f1f1;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 1px;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2); /* Subtle shadow for text */
+}
+
+/* Dish Grid with Single Column Layout */
+.dish-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* One column layout */
+    gap: 20px;
+    width: 105%;
+    max-width: 100%;
+    max-height: calc(100vh - 80px); /* Adjust based on header/footer height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding: 10px;
+}
+
+/* Optional: Adjust dish card styles */
+.dish-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    position: relative;
+    width: 90%; /* Full width for single column layout */
+    
+}
+
+.dish-card:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.dish-image {
+    width: 200px; /* Adjust as needed */
+    height: 140px; /* Adjust as needed */
+    border-radius: 5%;
+    margin-bottom: 10px;
+    margin-top: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+.dish-card p {
+    font-size: 1.2rem; /* Adjust font size as needed */
+    color: #fff;
+    font-weight: 500;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Smooth Scrolling */
+#menu-book {
+    scroll-behavior: smooth;
+}
+
+/* Buttons with Neon Glow */
+button {
+    background-color: #FF5722;
+    border: none;
+    color: white;
+    padding: 12px 25px;
+    font-size: 18px;
+    border-radius: 12px;
+    transition: background-color 0.4s, box-shadow 0.3s ease-in-out;
+    box-shadow: 0px 0px 15px rgba(255, 87, 34, 0.8); /* Neon glow */
+}
+
+button:hover {
+    background-color: #ff7043;
+    cursor: pointer;
+    box-shadow: 0px 0px 25px rgba(255, 87, 34, 1); /* Stronger glow on hover */
+}
+
+/* Dish Card Entry Animation */
+@keyframes slideIn {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.dish-card {
+    animation: slideIn 0.7s ease-in-out;
+}
+
+/* Add a footer with style */
+.footer {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Logo Styling on the First Page */
+#logo {
+    position: absolute;
+    top: 20px;
+    right: 270px;
+    width: 120px;
+    height: 50px;
+    filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.3));
+}
+/* Bounce Animation */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(10px);
+    }
+}
+
+#cover-page {
+   
+    background-size: cover; /* Ensures the background image covers the entire div */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents tiling of the background */
+    flex: 0 0 100vw;
+    height: 100vh;
+    padding: 30px;
+    box-sizing: border-box;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0px;
+    margin: 10px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}

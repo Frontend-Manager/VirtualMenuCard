@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Menu Book</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="https://hammerjs.github.io/dist/hammer.min.js"></script>
+</head>
+<body>
+    <div id="menu-book">
+        <!-- Book Cover Page -->
+        <div class="page" id="cover-page" style="background-image: url('images/bg.jpg');">
+            <img id="logo" src="images/FZBillinG Logo.png" alt="Brand Logo" style="background-color: ; border-radius: 14px; ">
+            <h1>Welcome! To Our Restaurant</h1>
+            <h3 style="margin-left: 150px; margin-top: 100px; color: black; background-color: white; border-radius: 10px; font-size: xx-large;">Swipe <- </h3>
+        </div>
+        
+
+        <!-- Starters Page (10 Dishes) -->
+        <div class="page">
+            <h2>The Mix</h2>
+            <div class="dish-grid">
+                <div class="dish-card">
+                    <img src="images/Alcohol.jpg" alt="Alcohol" class="dish-image">
+                    <p>Alcohol - 500</p>
+                </div>
+                <div class="dish-card">
+                    <img src="images/AlooMatar.jpg" alt="Aloo Matar" class="dish-image">
+                    <p>Aloo Matar</p>
+                </div>
+                <div class="dish-card">
+                    <img src="images/BananaSk.jpg" alt="Banana Shake" class="dish-image">
+                    <p>Banana Shake</p>
+                </div>
+                <div class="dish-card">
+                    <img src="images/Burger.jpg" alt="Burger" class="dish-image">
+                    <p>Burger</p>
+                </div>
+                <div class="dish-card">
+                    <img src="images/Burger.jpg" alt="Cheese Burger" class="dish-image">
+                    <p>Cheese Burger</p>
+                </div>
+                <div class="dish-card">
+                    <img src="images/FriedRice.jpg" alt="Fried Rice" class="dish-image">
+                    <p>Fried Rice</p>
+                </div>
+                <div class="dish-card">
+                    <img src="images/Dal.jpg" alt="Dal Tadka" class="dish-image">
+                    <p>Dal Tadka</p>
+                </div>
+                <div class="dish-card">
+                    <img src="images/Pepsi.jpg" alt="Pepsi" class="dish-image">
+                    <p>Pepsi</p>
+                </div>
+                <div class="dish-card">
+                    <img src="images/Tea.jpg" alt="Tea" class="dish-image">
+                    <p>Tea</p>
+                </div>
+                <div class="dish-card">
+                    <img src="images/Water.jpg" alt="Water" class="dish-image">
+                    <p>Water</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Course Page (10 Dishes) -->
+        <div class="page">
+            <h2>Main Course</h2>
+            <div class="dish-grid">
+                <div class="dish-card">
+                    <img src="images/Coffee.jpg" alt="Coffee" class="dish-image">
+                    <p>Coffee</p>
+                </div>
+                <div class="dish-card">
+                    <img src="images/Dal.jpg" alt="Dal Tadka" class="dish-image">
+                    <p>Dal Tadka</p>
+                </div>
+                <div class="dish-card">
+                    <img src="images/DalKhichdi.jpg" alt="Dal Khichdi" class="dish-image">
+                    <p>Dal Khichdi</p>
+                </div>
+                <div class="dish-card">
+                    <img src="images/Dosa.jpg" alt="Dosa" class="dish-image">
+                    <p>Dosa</p>
+                </div>
+                <div class="dish-card">
+                    <img src="images/Biryani.jpg" alt="Biryani" class="dish-image">
+                    <p>Biryani</p>
+                </div>
+                <div class="dish-card">
+                    <img src="images/PaneerTikka.jpg" alt="Paneer Tikka" class="dish-image">
+                    <p>Paneer Tikka</p>
+                </div>
+                <div class="dish-card">
+                    <img src="images/ChickenCurry.jpg" alt="Chicken Curry" class="dish-image">
+                    <p>Chicken Curry</p>
+                </div>
+                <div class="dish-card">
+                    <img src="images/FishCurry.jpg" alt="Fish Curry" class="dish-image">
+                    <p>Fish Curry</p>
+                </div>
+                <div class="dish-card">
+                    <img src="images/ButterChicken.jpg" alt="Butter Chicken" class="dish-image">
+                    <p>Butter Chicken</p>
+                </div>
+                <div class="dish-card">
+                    <img src="images/Garlicnaan.jpg" alt="Garlic Naan" class="dish-image">
+                    <p>Garlic Naan</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dessert Page (10 Dishes) -->
+        <div class="page">
+            <h2>Desserts</h2>
+            <div class="dish-grid">
+                <div class="dish-card">
+                    <img src="images/IceCream.jpg" alt="Ice Cream" class="dish-image">
+                    <p>Ice Cream</p>
+                </div>
+                <div class="dish-card">
+                    <img src="images/Gulab Jamun.jpg" alt="Gulab Jamun" class="dish-image">
+                    <p>Gulab Jamun</p>
+                </div>
+                <div class="dish-card">
+                    <img src="images/Kheer.jpg" alt="Kheer" class="dish-image">
+                    <p>Kheer</p>
+                </div>
+                <div class="dish-card">
+                    <img src="images/Brownie.jpg" alt="Brownie" class="dish-image">
+                    <p>Brownie</p>
+                </div>
+                <div class="dish-card">
+                    <img src="images/Custard.avif" alt="Custard" class="dish-image">
+                    <p>Custard</p>
+                </div>
+                <div class="dish-card">
+                    <img src="images/Pudding.jpg" alt="Pudding" class="dish-image">
+                    <p>Pudding</p>
+                </div>
+                <div class="dish-card">
+                    <img src="images/Ladoo.jpg" alt="Ladoo" class="dish-image">
+                    <p>Ladoo</p>
+                </div>
+                <div class="dish-card">
+                    <img src="images/RasMalai.jpg" alt="Ras Malai" class="dish-image">
+                    <p>Ras Malai</p>
+                </div>
+                <div class="dish-card">
+                    <img src="images/Barfi.jpg" alt="Barfi" class="dish-image">
+                    <p>Barfi</p>
+                </div>
+                <div class="dish-card">
+                    <img src="images/Jalebi.jpg" alt="Jalebi" class="dish-image">
+                    <p>Jalebi</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Drinks Page -->
+        <div class="page">
+            <h2>Drinks</h2>
+            <div class="dish-grid">
+                <div class="dish-card">
+                    <img src="images/Coke.jpg" alt="Coke" class="dish-image">
+                    <p>Coke</p>
+                </div>
+                <div class="dish-card">
+                    <img src="images/Pepsi.jpg" alt="Pepsi" class="dish-image">
+                    <p>Pepsi</p>
+                </div>
+                <div class="dish-card">
+                    <img src="images/Sprite,jpg.avif" alt="Sprite" class="dish-image">
+                    <p>Sprite</p>
+                </div>
+                <div class="dish-card">
+                    <img src="images/Fanta.jpg" alt="Fanta" class="dish-image">
+                    <p>Fanta</p>
+                </div>
+                <div class="dish-card">
+                    <img src="images/OrangeJuice.jpg" alt="Orange Juice" class="dish-image">
+                    <p>Orange Juice</p>
+                </div>
+                <div class="dish-card">
+                    <img src="images/Water.jpg" alt="Water" class="dish-image">
+                    <p>Water</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="page" id="cover-page" style="background-image: url(images/bg.jpg);">
+            <h1 style="margin-top: -50px;">Food that makes you say wow</h2>
+                <H2 style="margin-top: 450PX; font-size: larger; margin-left: 170PX;">Providing Our Best</H2>
+        </div>
+
+    </div>
+
+    <script src="js/index.js"></script>
+</body>
+</html>
