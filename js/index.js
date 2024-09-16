@@ -1,14 +1,21 @@
-// Get the menu-book element
-var menuBook = document.getElementById('menu-book');
+// JavaScript for swipe gestures
+let startX, endX;
 
-// Initialize Hammer.js for swipe detection
-var hammer = new Hammer(menuBook);
-
-// Handle swipe left and right for page navigation
-hammer.on('swipeleft', function() {
-    menuBook.scrollBy(window.innerWidth, 0); // Swipe to next page
+document.getElementById('menu-book').addEventListener('touchstart', function(e) {
+    startX = e.touches[0].clientX;
 });
 
-hammer.on('swiperight', function() {
-    menuBook.scrollBy(-window.innerWidth, 0); // Swipe to previous page
+document.getElementById('menu-book').addEventListener('touchend', function(e) {
+    endX = e.changedTouches[0].clientX;
+    handleSwipe();
 });
+
+function handleSwipe() {
+    if (startX - endX > 50) {
+        // Swipe Left
+        document.getElementById('menu-book').scrollBy({ left: window.innerWidth, behavior: 'smooth' });
+    } else if (endX - startX > 50) {
+        // Swipe Right
+        document.getElementById('menu-book').scrollBy({ left: -window.innerWidth, behavior: 'smooth' });
+    }
+}
