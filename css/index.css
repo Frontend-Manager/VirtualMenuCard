@@ -10,11 +10,12 @@ body {
 #menu-book {
     display: flex;
     flex-wrap: nowrap;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Prevent horizontal scrollbars */
+    overflow-y: hidden; /* Prevent vertical scrollbars */
     height: 100vh;
+    width: 100vw; /* Ensure it spans the full viewport width */
     scroll-snap-type: x mandatory;
     transition: all 0.1s ease-in-out;
-    
 }
 
 /* Page Layout */
@@ -29,13 +30,12 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
-    overflow:hidden;
+    overflow: hidden; /* Ensure no overflow within pages */
     border-radius: 0px;
     margin: 10px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    
-
 }
+
 
 /* Background Gradients for Pages */
 .page:nth-child(odd) {
