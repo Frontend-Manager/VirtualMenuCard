@@ -34,6 +34,8 @@ body {
     border-radius: 0px;
     margin: 10px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    will-change: transform, opacity; /* Hint to browser which properties will animate */
+    transition: transform 0.5s ease-in-out; /* Smoother transition for swiping */
 }
 
 
