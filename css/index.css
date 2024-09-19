@@ -10,10 +10,10 @@ body {
 #menu-book {
     display: flex;
     flex-wrap: nowrap;
-    overflow-x: hidden; /* Prevent horizontal scrollbars */
-    overflow-y: hidden; /* Prevent vertical scrollbars */
+    overflow-x: hidden;
+    overflow-y: hidden;
     height: 100vh;
-    width: 100vw; /* Ensure it spans the full viewport width */
+    width: 100vw;
     scroll-snap-type: x mandatory;
     transition: all 0.1s ease-in-out;
 }
@@ -30,32 +30,31 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
-    overflow: hidden; /* Ensure no overflow within pages */
+    overflow: hidden;
     border-radius: 0px;
     margin: 10px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    will-change: transform, opacity; /* Hint to browser which properties will animate */
-    transition: transform 0.5s ease-in-out; /* Smoother transition for swiping */
+    will-change: transform, opacity;
+    transition: transform 0.5s ease-in-out;
 }
-
 
 /* Background Gradients for Pages */
 .page:nth-child(odd) {
-    background: linear-gradient(135deg, #4C2E1F , #F2E0C9); /* Blue gradient for odd pages */
+    background: linear-gradient(135deg, #4C2E1F , #F2E0C9);
 }
 
 .page:nth-child(even) {
-    background: linear-gradient(135deg, #4C2E1F , #F2E0C9 ); /* Orange gradient for even pages */
+    background: linear-gradient(135deg, #4C2E1F , #F2E0C9 );
 }
 
 /* Enhanced Header and Text */
- h2 {
+h2 {
     color: #fff;
     font-size: 3rem;
     margin-bottom: 15px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3); /* Strong shadow for header */
+    text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 h1 {
@@ -78,25 +77,24 @@ h3 {
     text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
 }
 
-
 p {
     color: #f1f1f1;
     font-size: 1.5rem;
     font-weight: 600;
     text-align: center;
     letter-spacing: 1px;
-    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2); /* Subtle shadow for text */
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
 }
 
 /* Dish Grid with Single Column Layout */
 .dish-grid {
     display: grid;
-    grid-template-columns: 1fr; /* One column layout */
+    grid-template-columns: 1fr;
     gap: 20px;
     width: 105%;
     max-width: 100%;
-    max-height: calc(100vh - 80px); /* Adjust based on header/footer height */
-    overflow-y: auto; /* Enable vertical scrolling */
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
     padding: 10px;
 }
 
@@ -113,8 +111,7 @@ p {
     border: 1px solid rgba(255, 255, 255, 0.15);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     position: relative;
-    width: 90%; /* Full width for single column layout */
-    
+    width: 90%;
 }
 
 .dish-card:hover {
@@ -123,8 +120,8 @@ p {
 }
 
 .dish-image {
-    width: 200px; /* Adjust as needed */
-    height: 140px; /* Adjust as needed */
+    width: 200px;
+    height: 140px;
     border-radius: 5%;
     margin-bottom: 10px;
     margin-top: 15px;
@@ -132,12 +129,11 @@ p {
 }
 
 .dish-card p {
-    font-size: 1.2rem; /* Adjust font size as needed */
+    font-size: 1.2rem;
     color: #fff;
     font-weight: 500;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
-
 
 /* Smooth Scrolling */
 #menu-book {
@@ -153,13 +149,13 @@ button {
     font-size: 18px;
     border-radius: 12px;
     transition: background-color 0.4s, box-shadow 0.3s ease-in-out;
-    box-shadow: 0px 0px 15px rgba(255, 87, 34, 0.8); /* Neon glow */
+    box-shadow: 0px 0px 15px rgba(255, 87, 34, 0.8);
 }
 
 button:hover {
     background-color: #ff7043;
     cursor: pointer;
-    box-shadow: 0px 0px 25px rgba(255, 87, 34, 1); /* Stronger glow on hover */
+    box-shadow: 0px 0px 25px rgba(255, 87, 34, 1);
 }
 
 /* Dish Card Entry Animation */
@@ -192,6 +188,7 @@ button:hover {
     height: 50px;
     filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.3));
 }
+
 /* Bounce Animation */
 @keyframes bounce {
     0%, 100% {
@@ -203,10 +200,9 @@ button:hover {
 }
 
 #cover-page {
-   
-    background-size: cover; /* Ensures the background image covers the entire div */
-    background-position: center; /* Centers the background image */
-    background-repeat: no-repeat; /* Prevents tiling of the background */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     flex: 0 0 100vw;
     height: 100vh;
     padding: 30px;
