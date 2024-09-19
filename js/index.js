@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                         // Create dish price element
                         const dishPrice = document.createElement('p');
-                        dishPrice.textContent = `$${dish.Price}`;
+                        dishPrice.textContent = `${dish.Price}`;
 
                         // Append elements to dish card
                         dishCard.appendChild(dishImage);
