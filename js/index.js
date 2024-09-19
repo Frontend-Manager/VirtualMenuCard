@@ -1,33 +1,45 @@
 document.addEventListener('DOMContentLoaded', function() {
-        const apiUrl = 'https://sheetdb.io/api/v1/r9npyrr275u4l'; // Your Google Sheet API
-        const menuBook = document.getElementById('menu-book');
-        let touchStartX = 0;
+    const apiUrl = 'https://sheetdb.io/api/v1/r9npyrr275u4l'; // Your Google Sheet API
+    const menuBook = document.getElementById('menu-book');
+    let touchStartX = 0;
 
-        // Fetch data from Google Sheet
-        fetch(apiUrl)
-            .then(response => response.json())
-            .then(data => {
-                const pages = {};
+    // Fetch data from Google Sheet
+    fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+            const pages = {};
 
-                // Group dishes by page number
-                data.forEach(dish => {
-                    const pageNum = dish.Page;
-                    if (!pages[pageNum]) {
-                        pages[pageNum] = [];
-                    }
-                    pages[pageNum].push(dish);
-                });
+            // Group dishes by page number and category
+            data.forEach(dish => {
+                const pageNum = dish.Page;
+                const category = dish.Category;
 
-                // Create and append pages
-                Object.keys(pages).forEach(pageNum => {
-                    const pageElement = document.createElement('div');
-                    pageElement.classList.add('page');
+                if (!pages[pageNum]) {
+                    pages[pageNum] = {};
+                }
+                if (!pages[pageNum][category]) {
+                    pages[pageNum][category] = [];
+                }
+                pages[pageNum][category].push(dish);
+            });
 
-                    // Create and populate dish grid
+            // Create and append pages
+            Object.keys(pages).forEach(pageNum => {
+                const pageElement = document.createElement('div');
+                pageElement.classList.add('page');
+                pageElement.innerHTML = `<h2>Page ${pageNum}</h2>`;
+
+                // Loop through categories on each page
+                Object.keys(pages[pageNum]).forEach(category => {
+                    const categoryElement = document.createElement('div');
+                    categoryElement.classList.add('category');
+                    categoryElement.textContent = category;
+
+                    // Create and populate dish grid for this category
                     const dishGrid = document.createElement('div');
                     dishGrid.classList.add('dish-grid');
 
-                    pages[pageNum].forEach(dish => {
+                    pages[pageNum][category].forEach(dish => {
                         const dishCard = document.createElement('div');
                         dishCard.classList.add('dish-card');
 
@@ -43,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                         // Create dish price element
                         const dishPrice = document.createElement('p');
-                        dishPrice.textContent = `${dish.Price}`;
+                        dishPrice.textContent = `₹${dish.Price}`; // Price in INR
 
                         // Append elements to dish card
                         dishCard.appendChild(dishImage);
@@ -54,32 +66,35 @@ document.addEventListener('DOMContentLoaded', function() {
                         dishGrid.appendChild(dishCard);
                     });
 
-                    // Append dish grid to page element
+                    // Append category and dish grid to page element
+                    pageElement.appendChild(categoryElement);
                     pageElement.appendChild(dishGrid);
-                    // Append page element to menu book container
-                    menuBook.appendChild(pageElement);
                 });
-            })
-            .catch(error => console.error('Error fetching data:', error));
 
-        // Swipe functionality
-        menuBook.addEventListener('touchstart', (e) => {
-            touchStartX = e.touches[0].clientX;
-        });
+                // Append page element to menu book container
+                menuBook.appendChild(pageElement);
+            });
+        })
+        .catch(error => console.error('Error fetching data:', error));
 
-        menuBook.addEventListener('touchmove', (e) => {
-            const touchEndX = e.touches[0].clientX;
-            const touchDiff = touchStartX - touchEndX;
-
-            if (Math.abs(touchDiff) > 50) { // Swipe threshold
-                if (touchDiff > 0) {
-                    // Swipe left - move to next page
-                    menuBook.scrollBy({ left: window.innerWidth, behavior: 'smooth' });
-                } else {
-                    // Swipe right - move to previous page
-                    menuBook.scrollBy({ left: -window.innerWidth, behavior: 'smooth' });
-                }
-                touchStartX = touchEndX; // Reset the start point
-            }
-        });
+    // Swipe functionality
+    menuBook.addEventListener('touchstart', (e) => {
+        touchStartX = e.touches[0].clientX;
     });
+
+    menuBook.addEventListener('touchmove', (e) => {
+        const touchEndX = e.touches[0].clientX;
+        const touchDiff = touchStartX - touchEndX;
+
+        if (Math.abs(touchDiff) > 50) { // Swipe threshold
+            if (touchDiff > 0) {
+                // Swipe left - move to next page
+                menuBook.scrollBy({ left: window.innerWidth, behavior: 'smooth' });
+            } else {
+                // Swipe right - move to previous page
+                menuBook.scrollBy({ left: -window.innerWidth, behavior: 'smooth' });
+            }
+            touchStartX = touchEndX; // Reset the start point
+        }
+    });
+});
