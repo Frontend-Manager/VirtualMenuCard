@@ -50,7 +50,7 @@ body {
 /* Enhanced Header and Text */
 h2 {
     color: #fff;
-    font-size: 3rem;
+    font-size: 2rem;
     margin-bottom: 15px;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -217,4 +217,15 @@ button:hover {
     border-radius: 0px;
     margin: 10px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.category {
+    position: sticky;
+    top: 50px; /* This keeps the category below the page number */
+    background-color: #4C2E1F , #F2E0C9;
+    z-index: 1;
+    padding: 5px;
+    font-size: 2.5em;
+    margin: 10px 0;
+    text-align: center;
 }
