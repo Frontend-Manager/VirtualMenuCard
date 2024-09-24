@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const apiUrl = 'https://api.sheety.co/40cdb086bff82a3c12266121dd5025de/demo/sheet1';
+    const apiUrl = 'https://sheetdb.io/api/v1/ka6ew51z3eo7g';
     const menuBook = document.getElementById('menu-book');
 
     // Fetch data from Sheety API
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
             Object.keys(pages).forEach(pageNum => {
                 const pageElement = document.createElement('div');
                 pageElement.classList.add('page');
-                pageElement.innerHTML = `<h2>Page ${pageNum}</h2>`;
+                pageElement.innerHTML = <h2>Page ${pageNum}</h2>;
 
                 // Loop through categories on each page
                 Object.keys(pages[pageNum]).forEach(category => {
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                         // Create dish price element
                         const dishPrice = document.createElement('p');
-                        dishPrice.textContent = `₹${dish.Price}`; // Price in INR
+                        dishPrice.textContent = ₹${dish.Price}; // Price in INR
 
                         // Append elements to dish card
                         dishCard.appendChild(dishImage);
