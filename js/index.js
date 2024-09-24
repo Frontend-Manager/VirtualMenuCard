@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const apiUrl = 'https://sheetdb.io/api/v1/ka6ew51z3eo7g';
     const menuBook = document.getElementById('menu-book');
+    let touchStartX = 0; // Declare touchStartX
 
     // Fetch data from Sheety API
     fetch(apiUrl)
@@ -26,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
             Object.keys(pages).forEach(pageNum => {
                 const pageElement = document.createElement('div');
                 pageElement.classList.add('page');
-                pageElement.innerHTML = <h2>Page ${pageNum}</h2>;
+                pageElement.innerHTML = `<h2>Page ${pageNum}</h2>`; // Fixed here
 
                 // Loop through categories on each page
                 Object.keys(pages[pageNum]).forEach(category => {
@@ -54,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                         // Create dish price element
                         const dishPrice = document.createElement('p');
-                        dishPrice.textContent = ₹${dish.Price}; // Price in INR
+                        dishPrice.textContent = `₹${dish.Price}`; // Fixed here
 
                         // Append elements to dish card
                         dishCard.appendChild(dishImage);
@@ -92,9 +93,4 @@ document.addEventListener('DOMContentLoaded', function() {
                 menuBook.scrollBy({ left: window.innerWidth, behavior: 'smooth' });
             } else {
                 // Swipe right - move to previous page
-                menuBook.scrollBy({ left: -window.innerWidth, behavior: 'smooth' });
-            }
-            touchStartX = touchEndX; // Reset the start point
-        }
-    });
-});
+                menuBook.scrollBy({ left: -window.in
