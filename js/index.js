@@ -1,9 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const apiUrl = 'https://api.sheety.co/40cdb086bff82a3c12266121dd5025de/demo/sheet1'; // Your Google Sheet API
+    const apiUrl = 'https://api.sheety.co/40cdb086bff82a3c12266121dd5025de/demo/sheet1';
     const menuBook = document.getElementById('menu-book');
-    let touchStartX = 0;
 
-    // Fetch data from Google Sheet
+    // Fetch data from Sheety API
     fetch(apiUrl)
         .then(response => response.json())
         .then(data => {
@@ -76,6 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         })
         .catch(error => console.error('Error fetching data:', error));
+
 
     // Swipe functionality
     menuBook.addEventListener('touchstart', (e) => {
