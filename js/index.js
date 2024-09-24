@@ -1,12 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
     const apiUrl = 'https://sheetdb.io/api/v1/ka6ew51z3eo7g';
     const menuBook = document.getElementById('menu-book');
-    let touchStartX = 0; // Declare touchStartX
+    let touchStartX = 0;
 
     // Fetch data from Sheety API
     fetch(apiUrl)
         .then(response => response.json())
         .then(data => {
+            console.log(data); // Log the API response to inspect its structure
+
             const pages = {};
 
             // Group dishes by page number and category
@@ -27,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
             Object.keys(pages).forEach(pageNum => {
                 const pageElement = document.createElement('div');
                 pageElement.classList.add('page');
-                pageElement.innerHTML = `<h2>Page ${pageNum}</h2>`; // Fixed here
+                pageElement.innerHTML = `<h2>Page ${pageNum}</h2>`;
 
                 // Loop through categories on each page
                 Object.keys(pages[pageNum]).forEach(category => {
@@ -55,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                         // Create dish price element
                         const dishPrice = document.createElement('p');
-                        dishPrice.textContent = `₹${dish.Price}`; // Fixed here
+                        dishPrice.textContent = `₹${dish.Price}`;
 
                         // Append elements to dish card
                         dishCard.appendChild(dishImage);
@@ -93,4 +95,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 menuBook.scrollBy({ left: window.innerWidth, behavior: 'smooth' });
             } else {
                 // Swipe right - move to previous page
-                menuBook.scrollBy({ left: -window.in
+                menuBook.scrollBy({ left: -window.innerWidth, behavior: 'smooth' });
+            }
+            touchStartX = touchEndX; // Reset the start point
+        }
+    });
+});
